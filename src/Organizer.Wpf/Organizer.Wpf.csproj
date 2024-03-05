@@ -10,12 +10,29 @@
 
     <ItemGroup>
       <Folder Include="Converter\" />
-      <Folder Include="Extensions\" />
       <Folder Include="Messages\" />
       <Folder Include="Services\" />
       <Folder Include="Styles\" />
       <Folder Include="ViewModel\" />
-      <Folder Include="View\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+      <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.77" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Page Update="View\MainWindow.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Organizer.Application\Organizer.Application.csproj" />
+      <ProjectReference Include="..\Organizer.Infrastructure\Organizer.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>
